@@ -1,0 +1,80 @@
+
+#   -i <image>           Input image file (required)
+#   -o <output_file>     Output file to save ASCII art (default: ascii_output.txt)
+#   -w <width>           Custom width for output ASCII art (overrides auto sizing)
+#   -h <height>          Custom height for output ASCII art (overrides auto sizing)
+#   -s <style>           Style for jp2a engine (default: standard)
+#   -ch <chars>          Custom characters for jp2a engine (overrides -s)
+#   -pt <percent>        Padding top in percent of image height (default: 0)
+#   -pb <percent>        Padding bottom in percent of image height (default: 0)
+#   -pl <percent>        Padding left in percent of image width (default: 0)
+#   -pr <percent>        Padding right in percent of image width (default: 0)
+#   -c <color_mode>      Color mode: auto (default), none, 256, truecolor
+#   -e <engine>          ASCII engine to use: jp2a (default), chafa
+#   --symbols <set>      Symbol set for chafa (block, ascii, braille, etc.)
+#   --fg-only            Use only foreground colors (chafa only)
+#   --preview            Show generated ASCII art in terminal after creation
+#   --random-all         Randomize all unspecified settings (style, symbols, colors, paddings… 
+                         and randomly toggle --fg-only for chafa if not explicitly set)
+#   --help               Show this help message and exit
+
+
+
+### Style Mapping (JP2A only)
+
+1. **standard** → `--chars=A@#&%*+:-.`
+2. **fullblocks** → `--chars=██`
+3. **net** → `--chars=🮐🮐`
+4. **bars** → `--chars=█▌▐`
+5. **cutblock** → `--chars=🭁🭁`
+6. **agean** → `--chars=𐄊𐄎𐄗𐄞𐄧𐄳`
+7. **chess** → `--chars=♜♞♝♛♚♝♞♜♟♙♖♘♗♕♔♗♘♖`
+8. **dots** → `--chars=•°·.`
+9. **fade** → `--chars=@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,'"^. `
+10. **braille** → `--chars=⣀⣁⣂...⣿` (full braille set)
+11. **enclosed** → `--chars=🅐🅑🅒...🅩`
+12. **alchemy** → `--chars=🜀🜁🜂...🝳`
+13. **greek** → `--chars=ΑΒΓ...ω`
+14. **runes** → `--chars=ᚠᚡᚢ...ᛳ`
+15. **border** → `--chars=─│┌┐└┘`
+16. **fwquartersquare** → `--chars=🙾🙾`
+17. **bwquartersquare** → `--chars=🙿🙿`
+18. **fwslash** → `--chars=🙼🙼`
+19. **bwslash** → `--chars=🙽🙽`
+20. **floral** → `--chars=🙨🙪`
+21. **music** → `--chars=𝄞𝄆𝄇♩♪♫♬`
+22. **ornaments** → `--chars=♡♥❤❥❢❣...🙸`
+23. **cuneiform** → `--chars=𒄙𒄩𒄦...𒃦`
+24. **dominoh** → `--chars=🁣🁤🁥...🁢`
+25. **dominov** → `--chars=🀱🀲🀳...🀰`
+26. **cards** → `--chars=🂱🂲🂳...🃟`
+27. **tinycards** → `--chars=🂿🃠🃡...🃵`
+28. **suits** → `--chars=♠♣♥♦♤♧♡♢`
+29. **hieroglyphs** → `--chars=𓄒𓄇𓎌...𓍻`
+30. **hexagram** → `--chars=䷀䷁䷂...䷿`
+31. **geometricshapes** → `--chars=🞄●⬤◯⚬○...⯄`
+32. **stars** → `--chars=★⭑🟉🟊☆⭒...✾`
+33. **mahajong** → `--chars=🀇🀈🀉...🀪`
+34. **domino** → `--chars=🁣🁤🁥...🀰`
+35. **playingcards** → `--chars=♠♣♥♦♤♧♡♢🂱🂲...🃵`
+36. **default** → empty (`JP2A_CHARS=""`)
+
+
+
+# chafa Symbols (--symbols):
+   block      → █ ▓ ▒ ░
+   ascii      → @ # % * + - :
+   braille    → ⠁ ⠃ ⠉ ⠙ ⠿
+   sextant    → ▀ ▄ █ ▐ ▌
+   quad       → ▖ ▘ ▚ ▞
+   border     → ─ │ ┌ ┐ └ ┘
+   space      → (whitespace only)
+
+
+
+# Notes:
+# - Requires 'jp2a' or 'chafa' installed for ASCII conversion.
+# - Requires 'identify' from ImageMagick for image dimensions.
+# - Padding is spacing only (no background color applied).
+# - The preview prints ASCII art, not the original image.
+
