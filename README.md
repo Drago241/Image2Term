@@ -1,4 +1,4 @@
-This script, `image2term.sh`, is a versatile bash utility that transforms images into high-quality ASCII or ANSI art directly in your terminal. It serves as a powerful wrapper for the `jp2a` and `chafa` engines, offering extensive customization through unique character styles, color modes, and layout controls.
+`image2term.sh`, is a versatile bash utility that transforms images into high-quality ASCII or ANSI art directly in your terminal. It serves as a powerful wrapper for the `jp2a` and `chafa` engines, offering extensive customization through unique character styles, color modes, and layout controls.
 
 ---
 
